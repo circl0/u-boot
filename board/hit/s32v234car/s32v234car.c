@@ -27,7 +27,6 @@
 
 DECLARE_GLOBAL_DATA_PTR;
 
-void rtc_init(void);
 
 static void setup_iomux_uart(void)
 {
@@ -245,7 +244,6 @@ int board_early_init_f(void)
 	setup_iomux_enet();
 	setup_iomux_i2c();
 
-	setup_iomux_dcu();
 #ifdef CONFIG_DCU_QOS_FIX
 	board_dcu_qos();
 
@@ -259,8 +257,6 @@ int board_init(void)
 {
 	/* address of boot parameters */
 	gd->bd->bi_boot_params = PHYS_SDRAM + 0x100;
-
-	rtc_init();
 
 	return 0;
 }

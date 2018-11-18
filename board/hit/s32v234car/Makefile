@@ -5,6 +5,6 @@
 # SPDX-License-Identifier:	GPL-2.0+
 #
 
-obj-y   := s32v234car.o s32v_ocotp.o
+obj-y   := s32v234car.o
 
 #########################################################################

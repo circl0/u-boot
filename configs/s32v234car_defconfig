@@ -183,7 +183,7 @@ CONFIG_SYS_MALLOC_CLEAR_ON_INIT=y
 # Boot images
 #
 # CONFIG_FIT is not set
-CONFIG_SYS_EXTRA_OPTIONS="IMX_CONFIG=board/freescale/s32v234evb/s32v234car.cfg"
+CONFIG_SYS_EXTRA_OPTIONS="IMX_CONFIG=board/hit/s32v234car/s32v234car.cfg"
 
 #
 # Command line interface
@@ -279,7 +279,7 @@ CONFIG_CMD_PING=y
 #
 # Misc commands
 #
-CONFIG_CMD_TIME=y
+# CONFIG_CMD_TIME is not set
 CONFIG_CMD_MISC=y
 # CONFIG_CMD_TIMER is not set
 
@@ -327,7 +327,7 @@ CONFIG_NET_TFTP_VARS=y
 # Hardware crypto devices
 #
 # CONFIG_FSL_CAAM is not set
-# CONFIG_FSL_CSE3 is not set
+CONFIG_FSL_CSE3=y
 
 #
 # Demo for driver model
