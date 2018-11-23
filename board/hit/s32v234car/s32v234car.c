@@ -235,6 +235,51 @@ int board_dcu_qos(void)
 }
 #endif
 
+void setup_iomux_sdhc(void)
+{
+	/* Set iomux PADS for USDHC */
+
+	/* P21 pad: uSDHC clk */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(81));
+	writel(0x2, SIUL2_MSCRn(902));
+
+	/* P22 pad: uSDHC CMD */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(82));
+	writel(0x2, SIUL2_MSCRn(901));
+
+	/* M20 pad: uSDHC DAT0 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(83));
+	writel(0x2, SIUL2_MSCRn(903));
+
+	/* N23 pad: uSDHC DAT1 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(84));
+	writel(0x2, SIUL2_MSCRn(904));
+
+	/* N20 pad: uSDHC DAT2 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(85));
+	writel(0x2, SIUL2_MSCRn(905));
+
+	/* N25 pad: uSDHC DAT3 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(86));
+	writel(0x2, SIUL2_MSCRn(906));
+
+	/* N19 pad: uSDHC DAT4 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(87));
+	writel(0x2, SIUL2_MSCRn(907));
+
+	/* N22 pad: uSDHC DAT5 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(88));
+	writel(0x2, SIUL2_MSCRn(908));
+
+	/* P24 pad: uSDHC DAT6 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(89));
+	writel(0x2, SIUL2_MSCRn(909));
+
+	/* P25 pad: uSDHC DAT7 */
+	writel(SIUL2_USDHC_PAD_CTRL_BASE | SIUL2_MSCR_MUX_MODE_ALT1, SIUL2_MSCRn(90));
+	writel(0x2, SIUL2_MSCRn(910));
+}
+
 int board_early_init_f(void)
 {
 	clock_init();
