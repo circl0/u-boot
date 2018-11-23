@@ -24,9 +24,10 @@
 #
 # we use $+ instead of $^ so the order of files is kept
 
-flash_type := s26kl
+# flash_type := s26kl
 # Uncomment this for s70fl01gs SPI flash or any other custom parameters definition
 # flash_type := s70fl01gs
+flash_type := s70fs01gs
 
 u-boot.s32.qspi: zero.512 qspi_params.bin zero.3266 ../../u-boot.s32
 	cat $+ > $@
