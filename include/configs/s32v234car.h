@@ -42,6 +42,8 @@
 #define CONFIG_FEC_XCV_TYPE     RGMII
 #define CONFIG_PHYLIB
 
+#define CONFIG_FEC_MXC_PHYADDR  1
+
 #define	FDT_FILE s32v234car.dtb
 
 #define CONFIG_SYS_INIT_SP_OFFSET	\

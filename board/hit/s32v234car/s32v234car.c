@@ -51,9 +51,20 @@ static void setup_iomux_uart(void)
 
 static void setup_iomux_enet(void)
 {
+#ifndef CONFIG_PHY_RGMII_DIRECT_CONNECTED
+	/* MDC - PC13 */
+	writel(0x0020c701, SIUL2_MSCRn(45));
+	/* MDIO - PC14 */
+	writel(0x0028c701, SIUL2_MSCRn(46));
+	writel(0x2, SIUL2_MSCRn(981));
+#endif
+
 #ifdef CONFIG_PHY_RGMII_DIRECT_CONNECTED
 	/* TX_CLK - PC15 */
 	writel(0x0020c701, SIUL2_MSCRn(47));
+#else
+	/* TX_CLK - PC15 */
+	writel(0x00203701, SIUL2_MSCRn(47));
 #endif
 	writel(0x2, SIUL2_MSCRn(978));
 
