@@ -73,6 +73,7 @@ const struct spi_flash_params spi_flash_params_table[] = {
 	{"S25FL512S_64K",  0x010220, 0x4d0100,  64 * 1024,  1024, RD_FULL,		     WR_QPP | ADDR_4B},
 	{"S25FL512S_512K", 0x010220, 0x4f0000, 256 * 1024,   256, RD_FULL,		     WR_QPP | ADDR_4B},
 	{"S70FL01GS_1G",   0x010221, 0x4d00,   256 * 1024,   256, RD_NORM,		     ADDR_4B},
+	{"S70FS01GS_1G",   0x010221, 0x4d0081,   256 * 1024,   256, RD_FULL,		     WR_QPP | ADDR_4B},
 #endif
 #ifdef CONFIG_SPI_FLASH_STMICRO		/* STMICRO */
 	{"M25P10",	   0x202011, 0x0,	32 * 1024,     4, RD_NORM,			  0},
